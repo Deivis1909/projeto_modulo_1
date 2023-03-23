@@ -1,9 +1,10 @@
 
 import { useState,useEffect } from 'react';
 import './App.css';
+//import Carrinho from './components/Carrinho';
 import Header from './components/Header';
 import ListaProdutos from './components/ListaProdutos';
-//import ListaProdutos from './components/ListaProdutos';
+import Pesquisar from './components/Pesquisar';
 
 
 
@@ -27,14 +28,15 @@ function App() {
   }, []);
 
   
-
-
   return (
     <div className="App">
       <Header />
-      <ListaProdutos produtos = {produtos} />
-      
-      
+      <div className="principal">
+        <ListaProdutos produtos = {produtos} />
+         <div>
+         <Pesquisar />
+         </div>
+    </div>
       
     </div>
   );
