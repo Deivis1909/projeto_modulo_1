@@ -31,15 +31,11 @@ export default function Pesquisar({produtos}){
         
      //  return prod.codigo == parseInt(codDigitado)
        
-     setLista(filtrados)
-    
      
-        }
-
-        
-     
-
-     
+     setLista([...lista,  ...filtrados]);
+           
+    }
+       
     
     return(
     <div>
