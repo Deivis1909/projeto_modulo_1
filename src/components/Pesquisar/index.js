@@ -1,19 +1,16 @@
 import "./styles.css"
-import { useRef, useState } from "react"
+import { useRef, useState} from "react"
+import Carrinho from "../Carrinho";
 
-export default function Pesquisar(produtos){
+export default function Pesquisar({produtos}){
 
 // quebrar o array produtos e selecionar pelo codigo 
 // comparar codigo com numero vindo do imput
   
 
     const codDigitadoRef = useRef();
-    const [digitado,setDigitado] = useState(false);
+    
     const [lista,setLista] = useState([]);
-
-
-
-
 
     
 
@@ -24,19 +21,26 @@ export default function Pesquisar(produtos){
             //verifica se a pessoa nao digitou o submit sem preencher
         if (!codDigitado){
             alert("todos os campos devem ser preenchidos");
-            return;
+            return codDigitado;
         }
 
-            alert(codDigitado)
-       //const filtrados = produtos.filter((prod) => {
+       
+       const filtrados = produtos.filter(prod => 
+         prod.codigo === parseInt(codDigitado))
+       
+        
      //  return prod.codigo == parseInt(codDigitado)
        
-            
-         }
+     setLista(filtrados)
+    
+     
+        }
 
-   
-   
+        
+     
 
+     
+    
     return(
     <div>
         <form onSubmit={handleSubmit}>
@@ -47,8 +51,10 @@ export default function Pesquisar(produtos){
             
             <input ref={codDigitadoRef} type="number"></input>  
             <button type="submit" value="salada">adicionar</button>
-        </form>    
+        </form> 
 
+          
+            <Carrinho lista ={lista}/>
     </div>
     )
 }

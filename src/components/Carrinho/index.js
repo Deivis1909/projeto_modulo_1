@@ -1,35 +1,34 @@
-export default function Carrinho({produtos}){
+export default function Carrinho({lista}){
 
+    
     return(
         <div>
-            <h1>Carrinho de compras</h1>
-            <table>
-                <thead>
-                    <th>produto</th>
-                    <th>descricao</th>
-
-                </thead>
-                <tbody>
-                    {
-                        produtos.map( prod => <Linha key={prod.codigo} descricao={prod.descricao} />)
-                    }
-
-                </tbody>
-
-
-            </table>
-
+             <>
+      <div className='tabela-titulo'>
+      
+      </div>
+      <table className='tabela'>
+        <thead>
+          <tr>
+            <th>produto</th>
+            <th>codigo</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {
+            lista.map(prod => 
+              <tr key={prod.codigo}>
+                <td>{prod.descricao}</td>
+                <td>{prod.codigo}</td>
+                
+              </tr>
+            )
+          }
+        </tbody>
+      </table>
+    </>
+           
         </div>
     )
 }
-function Linha( {prod} ) {
-    return (
-      <tr>
-        
-        <td>{prod.descricao}</td>
-        <td>salada</td>
-        
-      </tr>
-    );
-  }
-  

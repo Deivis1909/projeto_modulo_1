@@ -5,12 +5,14 @@ import './App.css';
 import Header from './components/Header';
 import ListaProdutos from './components/ListaProdutos';
 import Pesquisar from './components/Pesquisar';
+import Carrinho from './components/Carrinho';
 
 
 
 function App() {
 
   const[produtos,setProdutos] = useState([]);
+
 
   useEffect(() => {
 
@@ -34,8 +36,10 @@ function App() {
       <div className="principal">
         <ListaProdutos produtos = {produtos} />
          <div>
-         <Pesquisar />
+         <Pesquisar produtos = {produtos} />
+        
          </div>
+         
     </div>
       
     </div>
