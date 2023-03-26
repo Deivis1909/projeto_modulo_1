@@ -23,7 +23,10 @@ function App() {
    //.then(data =>{
   // })
   .then(produtos => { 
-    setProdutos(produtos);
+    const novoprod = produtos.map(domap =>{
+      return{codigo:domap.codigo, descricao:domap.descricao ,marca:domap.marca, preco:domap.preco, imagem:domap.imagem, quanti:0}
+    })
+    setProdutos(novoprod)
     
   } )
   .catch(erro => console.log(erro));

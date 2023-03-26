@@ -21,6 +21,7 @@ export default function Carrinho({lista}){
               <tr key={prod.codigo}>
                 <td>{prod.descricao}</td>
                 <td>{prod.codigo}</td>
+                <td>{prod.quanti}</td>
                 
               </tr>
             )

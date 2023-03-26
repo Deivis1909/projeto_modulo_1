@@ -7,18 +7,22 @@ export default function Pesquisar({produtos}){
 // quebrar o array produtos e selecionar pelo codigo 
 // comparar codigo com numero vindo do imput
   
-
-    const codDigitadoRef = useRef();
     
+    const codDigitadoRef = useRef();
     const [lista,setLista] = useState([]);
+    
+    const quantRef= useRef();
+
 
     
 
     function handleSubmit(e){
         e.preventDefault();
         const codDigitado = codDigitadoRef.current.value;
-            
-            //verifica se a pessoa nao digitou o submit sem preencher
+        const quantid = quantRef.current.value;   
+            //quantid = parseInt(quantid);
+            alert(quantid);
+        //verifica se a pessoa nao digitou o submit sem preencher
         if (!codDigitado){
             alert("todos os campos devem ser preenchidos");
             return codDigitado;
@@ -31,8 +35,11 @@ export default function Pesquisar({produtos}){
         
      //  return prod.codigo == parseInt(codDigitado)
        
-     
+     // concatenando listas 
      setLista([...lista,  ...filtrados]);
+     setLista.quanti = quantid;
+    
+    
            
     }
        
@@ -41,12 +48,16 @@ export default function Pesquisar({produtos}){
     <div>
         <form onSubmit={handleSubmit}>
             <h3> Pesquisar produto</h3>
-          <label>
-            codigo produto
-            </label>
-            
-            <input ref={codDigitadoRef} type="number"></input>  
-            <button type="submit" value="salada">adicionar</button>
+            <div>
+            <label htmlFor="cod">codigo:</label> 
+            <input ref={codDigitadoRef} type="number" id="cod"></input>
+            </div>
+
+            <div>
+            <label htmlFor="quant">quantidade:</label> 
+            <input ref={quantRef} type="number" id="quant"></input> 
+            </div>
+            <button type="submit" value={'salada'}>adicionar</button>
         </form> 
 
           
