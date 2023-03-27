@@ -37,9 +37,20 @@ export default function Pesquisar({produtos}){
        
      // concatenando listas 
      setLista([...lista,  ...filtrados]);
-     setLista.quanti = quantid;
+
+     const incluirLista = (codProd, qtdProd) => {
+        const produto = produtos.find(p1 => p1.codigo === +codProd);
+        const listaAdicional =  {
+          codigo: codProd,
+          descricao: produto.descricao,
+          marca: produto.marca,
+          preco: produto.preco,
+          quantidade: qtdProd,
+          imagem: produto.imagem}
+          setLista([...lista, listaAdicional]);
+      };
     
-    
+    incluirLista(codDigitado,quantid)  
            
     }
        
