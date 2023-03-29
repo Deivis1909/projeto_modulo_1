@@ -1,3 +1,4 @@
+import "./styles.css"
 export default function Carrinho({lista}){
 
     
@@ -14,6 +15,7 @@ export default function Carrinho({lista}){
           <th>codigo</th>
           <th>quantidade</th>
           <th>preco unitar.</th>
+          <th>imagem</th>
           
         </tr>
       </thead>
@@ -25,6 +27,9 @@ export default function Carrinho({lista}){
               <td>{prod.codigo}</td>
               <td>{prod.quantidade}</td>
               <th>{prod.preco}</th>
+              <th>
+              <img src={prod.imagem} alt='foto do produto' className= 'produto-img' />
+              </th>
               
             </tr>
           )

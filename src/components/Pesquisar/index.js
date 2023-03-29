@@ -1,6 +1,7 @@
 import "./styles.css"
 import { useRef, useState} from "react"
 import Carrinho from "../Carrinho";
+import Cupom from "../Cupom";
 
 export default function Pesquisar({produtos}){
 
@@ -21,7 +22,7 @@ export default function Pesquisar({produtos}){
         const codDigitado = codDigitadoRef.current.value;
         const quantid = quantRef.current.value;   
             //quantid = parseInt(quantid);
-            alert(quantid);
+           
         //verifica se a pessoa nao digitou o submit sem preencher
         if (!codDigitado){
             alert("todos os campos devem ser preenchidos");
@@ -73,6 +74,7 @@ export default function Pesquisar({produtos}){
 
           
             <Carrinho lista ={lista}/>
+            <Cupom lista={lista}/>
     </div>
     )
 }

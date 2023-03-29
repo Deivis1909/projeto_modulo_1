@@ -2,20 +2,6 @@
 export default  function ListaProdutos({produtos}){
    
 
-   //const[produtos,setProdutos] = useState([]);
-
-    //useEffect(() => {
-
-    //fetch('produtos.json')
-    //.then(resp => resp.json())
-     //.then(produtos => { 
-    //setProdutos(produtos);
-    
-  //} )
-  //.catch(erro => console.log(erro));
-//}, []);
-
-
     return(
         <div>
             <>

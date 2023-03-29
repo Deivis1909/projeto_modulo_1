@@ -1,6 +1,7 @@
 .superior{
-    background-color: rgb(234, 236, 237);
-    color:brown;
+    background-color:brown;
+    color:whitesmoke;
+    border-radius: 10px;;
 }
 .superior h1{
     padding: 10px;;
