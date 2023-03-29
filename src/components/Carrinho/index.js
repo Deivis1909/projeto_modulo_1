@@ -1,5 +1,5 @@
 import "./styles.css"
-export default function Carrinho({lista}){
+export default function Carrinho({codigo,descricao,quantidade,preco,imagem,precototal}){
 
     
   return(
@@ -15,24 +15,26 @@ export default function Carrinho({lista}){
           <th>codigo</th>
           <th>quantidade</th>
           <th>preco unitar.</th>
-          <th>imagem</th>
+          
+          <th>total</th>
           
         </tr>
       </thead>
       <tbody>
         {
-          lista.map(prod => 
-            <tr key={prod.codigo}>
-              <td>{prod.descricao}</td>
-              <td>{prod.codigo}</td>
-              <td>{prod.quantidade}</td>
-              <th>{prod.preco}</th>
+          
+            <tr key={codigo}>
+              <td>{descricao}</td>
+              <td>{codigo}</td>
+              <td>{quantidade}</td>
+              <th>R${preco.toFixed(2)}</th>
+              <th>R${precototal.toFixed(2)}</th>
               <th>
-              <img src={prod.imagem} alt='foto do produto' className= 'produto-img' />
+              <img src={imagem} alt='foto do produto' className= 'produto-img' />
               </th>
               
             </tr>
-          )
+          
         }
       </tbody>
     </table>

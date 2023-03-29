@@ -1,5 +1,5 @@
 import "./styles.css"
-export default function Cupom({lista}){
+export default function Cupom({codigo,descricao,quantidade,preco,precototal}){
 
 return(
     <div>
@@ -19,15 +19,16 @@ return(
 </thead>
 <tbody>
  {
-   lista.map(prod => 
-     <tr key={prod.codigo}>
-       <td>{prod.descricao}</td>
-       <td>{prod.codigo}</td>
-       <td>{prod.quantidade}</td>
-       <th>{prod.preco}</th>
+   
+     <tr key={codigo}>
+       <td>{descricao}</td>
+       <td>{codigo}</td>
+       <td>{quantidade}</td>
+       <th>{preco.toFixed(2)}</th>
+       <th>{precototal.toFixed(2)}</th>
        
      </tr>
-   )
+   
  }
 </tbody>
 </table>

@@ -72,9 +72,30 @@ export default function Pesquisar({produtos}){
             <button type="submit" value={'salada'}>adicionar</button>
         </form> 
 
-          
-            <Carrinho lista ={lista}/>
-            <Cupom lista={lista}/>
+        {
+                lista.map(l => <Carrinho key={l.codigo} 
+                    codigo={l.codigo}
+          descricao= {l.descricao}
+          marca={l.marca}
+          preco= {l.preco}
+          quantidade= {l.quantidade}
+          imagem= {l.imagem}
+          precototal={l.quantidade*l.preco}
+          />)
+            }
+            {
+                lista.map(l => <Cupom key={l.codigo} 
+                    codigo={l.codigo}
+          descricao= {l.descricao}
+          marca={l.marca}
+          preco= {l.preco}
+          quantidade= {l.quantidade}
+          imagem= {l.imagem}
+          precototal={l.quantidade*l.preco}
+          />)
+            }
+            
+            
     </div>
     )
 }
