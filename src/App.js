@@ -5,7 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import ListaProdutos from './components/ListaProdutos';
 import Pesquisar from './components/Pesquisar';
-import Carrinho from './components/Carrinho';
+
 
 
 
@@ -24,7 +24,7 @@ function App() {
   // })
   .then(produtos => { 
     const novoprod = produtos.map(domap =>{
-      return{codigo:domap.codigo, descricao:domap.descricao ,marca:domap.marca, preco:domap.preco, imagem:domap.imagem, quanti:domap.quantidade}
+      return{codigo:domap.codigo, descricao:domap.descricao ,marca:domap.marca, preco:domap.preco, imagem:domap.imagem, quanti:domap.quantidade,total:domap.total}
     })
     setProdutos(novoprod)
     

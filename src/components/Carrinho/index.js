@@ -1,6 +1,14 @@
-import "./styles.css"
-export default function Carrinho({codigo,descricao,quantidade,preco,imagem,precototal}){
 
+import "./styles.css"
+
+export default function Carrinho({codigo,descricao,quantidade,preco,imagem,total,unitario}){
+
+  
+    
+     
+ 
+
+  
     
   return(
       <div>
@@ -28,10 +36,11 @@ export default function Carrinho({codigo,descricao,quantidade,preco,imagem,preco
               <td>{codigo}</td>
               <td>{quantidade}</td>
               <th>R${preco.toFixed(2)}</th>
-              <th>R${precototal.toFixed(2)}</th>
+              <th>R${unitario.toFixed(2)}</th>
               <th>
               <img src={imagem} alt='foto do produto' className= 'produto-img' />
               </th>
+              <th><button>REMOVER</button></th>
               
             </tr>
           

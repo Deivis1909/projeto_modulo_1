@@ -11,6 +11,7 @@ export default function Pesquisar({produtos}){
     
     const codDigitadoRef = useRef();
     const [lista,setLista] = useState([]);
+   
     
     const quantRef= useRef();
 
@@ -47,15 +48,26 @@ export default function Pesquisar({produtos}){
           marca: produto.marca,
           preco: produto.preco,
           quantidade: qtdProd,
-          imagem: produto.imagem}
+          imagem: produto.imagem,
+          total:produto.total
+        }
           setLista([...lista, listaAdicional]);
       };
     
     incluirLista(codDigitado,quantid)  
            
     }
-       
+
+  //  let tot = 0;
+    //function total(tot,item){
+
+      //  return tot +(item.unitario * item.quant)
+      //}
+        
+      
     
+        
+   
     return(
     <div>
         <form onSubmit={handleSubmit}>
@@ -80,7 +92,8 @@ export default function Pesquisar({produtos}){
           preco= {l.preco}
           quantidade= {l.quantidade}
           imagem= {l.imagem}
-          precototal={l.quantidade*l.preco}
+          unitario={l.quantidade*l.preco}
+       
           />)
             }
             {
@@ -91,8 +104,14 @@ export default function Pesquisar({produtos}){
           preco= {l.preco}
           quantidade= {l.quantidade}
           imagem= {l.imagem}
-          precototal={l.quantidade*l.preco}
+          unitario={l.quantidade*l.preco}
+          l = {l}
+          
+          
+          
+          
           />)
+        
             }
             
             
