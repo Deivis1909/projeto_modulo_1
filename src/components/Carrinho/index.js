@@ -52,3 +52,4 @@ export default function Carrinho({codigo,descricao,quantidade,preco,imagem,total
       </div>
   )
 }
+

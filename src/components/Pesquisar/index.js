@@ -15,7 +15,13 @@ export default function Pesquisar({produtos}){
     
     const quantRef= useRef();
 
-
+    function calculaTotalDoCupom() {
+      let totalCupom = 0;
+      lista.forEach(element => {
+        totalCupom += element.preco * element.quantidade
+      });
+      return totalCupom;
+    }
     
 
     function handleSubmit(e){
@@ -105,7 +111,7 @@ export default function Pesquisar({produtos}){
           quantidade= {l.quantidade}
           imagem= {l.imagem}
           unitario={l.quantidade*l.preco}
-          l = {l}
+          totalCupom = {calculaTotalDoCupom()}
           
           
           
