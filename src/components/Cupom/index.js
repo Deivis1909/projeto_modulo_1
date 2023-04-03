@@ -24,7 +24,7 @@ return(
    <th>quantidade</th>
    <th>preco unitar.</th>
    <th>Valor unit</th>
-   <th>Valor total</th>
+   
    
  </tr>
 </thead>
